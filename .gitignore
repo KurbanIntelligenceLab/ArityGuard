@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+# rebuilt by make tables
+tables/
+# fetched by make data
+data/hotpotqa/
+data/2wikimultihopqa/
+data/Lying_with_Truth/
+data/RobustRAG/
+# vote caches written by the drivers
+runs/
+runs_meta/
+results/MOCK*/
+code/results/
+.env
+# build marker of tools/build_public_release.py (in the source repo)
+.built-by-build_public_release

@@ -1,0 +1,203 @@
+{
+ "experiment": "COST",
+ "agent": "Qwen/Qwen2.5-14B-Instruct",
+ "n_pools": 4,
+ "pool_sizes": [
+  11,
+  257,
+  271,
+  271
+ ],
+ "methods": {
+  "undefended": {
+   "calls_per_query": 1.0,
+   "prompt_tokens_per_query": 7932.75,
+   "gpu_seconds_per_query": 14.32261899963487,
+   "per_pool": [
+    {
+     "calls": 1,
+     "prompt_tokens": 579,
+     "seconds": 1.2086970009841025
+    },
+    {
+     "calls": 1,
+     "prompt_tokens": 9403,
+     "seconds": 16.588344973046333
+    },
+    {
+     "calls": 1,
+     "prompt_tokens": 10871,
+     "seconds": 19.482384953647852
+    },
+    {
+     "calls": 1,
+     "prompt_tokens": 10878,
+     "seconds": 20.01104907086119
+    }
+   ]
+  },
+  "feed_partition_omega1": {
+   "calls_per_query": 202.5,
+   "prompt_tokens_per_query": 41849.75,
+   "gpu_seconds_per_query": 119.86293705925345,
+   "per_pool": [
+    {
+     "calls": 11,
+     "prompt_tokens": 2249,
+     "seconds": 6.392870291136205
+    },
+    {
+     "calls": 257,
+     "prompt_tokens": 52411,
+     "seconds": 150.82316778972745
+    },
+    {
+     "calls": 271,
+     "prompt_tokens": 56771,
+     "seconds": 162.15616467176005
+    },
+    {
+     "calls": 271,
+     "prompt_tokens": 55968,
+     "seconds": 160.0795454843901
+    }
+   ]
+  },
+  "feed_partition_omega3": {
+   "calls_per_query": 68.0,
+   "prompt_tokens_per_query": 19210.5,
+   "gpu_seconds_per_query": 46.20872517640237,
+   "per_pool": [
+    {
+     "calls": 4,
+     "prompt_tokens": 1080,
+     "seconds": 2.6359776235185564
+    },
+    {
+     "calls": 86,
+     "prompt_tokens": 23683,
+     "seconds": 57.88509185286239
+    },
+    {
+     "calls": 91,
+     "prompt_tokens": 26171,
+     "seconds": 62.136582429055125
+    },
+    {
+     "calls": 91,
+     "prompt_tokens": 25908,
+     "seconds": 62.1772488001734
+    }
+   ]
+  },
+  "majority_vote": {
+   "calls_per_query": 5.0,
+   "prompt_tokens_per_query": 39663.75,
+   "gpu_seconds_per_query": 72.98598411004059,
+   "per_pool": [
+    {
+     "calls": 5,
+     "prompt_tokens": 2895,
+     "seconds": 6.273765494581312
+    },
+    {
+     "calls": 5,
+     "prompt_tokens": 47015,
+     "seconds": 85.68584260903299
+    },
+    {
+     "calls": 5,
+     "prompt_tokens": 54355,
+     "seconds": 99.99699143925682
+    },
+    {
+     "calls": 5,
+     "prompt_tokens": 54390,
+     "seconds": 99.98733689729124
+    }
+   ]
+  },
+  "llm_judge": {
+   "calls_per_query": 6.0,
+   "prompt_tokens_per_query": 47631.5,
+   "gpu_seconds_per_query": 87.72301678196527,
+   "per_pool": [
+    {
+     "calls": 6,
+     "prompt_tokens": 3509,
+     "seconds": 7.510647967923433
+    },
+    {
+     "calls": 6,
+     "prompt_tokens": 56453,
+     "seconds": 102.82636213954538
+    },
+    {
+     "calls": 6,
+     "prompt_tokens": 65261,
+     "seconds": 120.09529962204397
+    },
+    {
+     "calls": 6,
+     "prompt_tokens": 65303,
+     "seconds": 120.4597573983483
+    }
+   ]
+  },
+  "influence_detector": {
+   "calls_per_query": 203.5,
+   "prompt_tokens_per_query": 2079397.75,
+   "gpu_seconds_per_query": 3824.8370370866032,
+   "per_pool": [
+    {
+     "calls": 12,
+     "prompt_tokens": 6536,
+     "seconds": 14.084260655101389
+    },
+    {
+     "calls": 258,
+     "prompt_tokens": 2416739,
+     "seconds": 4418.191482971888
+    },
+    {
+     "calls": 272,
+     "prompt_tokens": 2946211,
+     "seconds": 5434.388069986366
+    },
+    {
+     "calls": 272,
+     "prompt_tokens": 2948105,
+     "seconds": 5432.684334733058
+    }
+   ]
+  },
+  "arq": {
+   "calls_per_query": 300.0,
+   "prompt_tokens_per_query": 61792.25,
+   "gpu_seconds_per_query": 177.02046152134426,
+   "per_pool": [
+    {
+     "calls": 300,
+     "prompt_tokens": 61151,
+     "seconds": 175.48668999411166
+    },
+    {
+     "calls": 300,
+     "prompt_tokens": 61156,
+     "seconds": 175.79742146190256
+    },
+    {
+     "calls": 300,
+     "prompt_tokens": 62871,
+     "seconds": 178.99119412479922
+    },
+    {
+     "calls": 300,
+     "prompt_tokens": 61991,
+     "seconds": 177.8065405045636
+    }
+   ]
+  }
+ },
+ "_written": "2026-10-07T00:20:06"
+}

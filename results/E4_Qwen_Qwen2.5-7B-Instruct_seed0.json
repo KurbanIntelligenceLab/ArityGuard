@@ -1,0 +1,1499 @@
+{
+ "experiment": "E4",
+ "agent": "Qwen/Qwen2.5-7B-Instruct",
+ "seed": 0,
+ "arq_t": 1,
+ "arq_G": 300,
+ "arq_rho": 0.0038,
+ "n_pools": 16,
+ "summary": {
+  "undefended_accuracy": 0.4375,
+  "feed_partition_omega1_accuracy": 0.4375,
+  "feed_partition_omega3_accuracy": 0.375,
+  "feed_partition_matched_accuracy": 0.4375,
+  "feed_partition_omega1_cert_rate": 1.0,
+  "majority_vote_own_accuracy": 0.4375,
+  "majority_vote_matched_accuracy": 0.4375,
+  "llm_judge_accuracy": 0.4375,
+  "influence_detector_accuracy": 0.4375,
+  "query_decomposition_accuracy": null,
+  "query_decomposition_coverage": 0.0,
+  "arq_accuracy": 0.4375,
+  "arq_cert_rate": 1.0
+ },
+ "per_query": [
+  {
+   "query": "Ahmed Merabet was the first victim of the Charlie Hebdo attack",
+   "gold": "FALSE",
+   "n_items": 11,
+   "undefended": {
+    "verdict": "TRUE",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": false
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 11,
+     "n_groups": 11,
+     "c1": 9,
+     "c2": 1,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": false
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 4,
+     "n_groups": 4,
+     "c1": 3,
+     "c2": 1,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": false
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 11,
+    "n_groups": 11,
+    "c1": 9,
+    "c2": 1,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": false,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "TRUE",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": false
+   },
+   "majority_vote_matched": {
+    "verdict": "TRUE",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": false
+   },
+   "llm_judge": {
+    "verdict": "ABSTAIN",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": false,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "TRUE",
+    "certified": null,
+    "calls": 12,
+    "pivotal_fraction": 0.45454545454545453,
+    "method": "influence_detector",
+    "correct": false
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": false
+   }
+  },
+  {
+   "query": "Ferguson police are leading a smear campaign or character assassination of M. Brown",
+   "gold": "ABSTAIN",
+   "n_items": 257,
+   "undefended": {
+    "verdict": "ABSTAIN",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": true
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 257,
+     "n_groups": 257,
+     "c1": 249,
+     "c2": 8,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": true
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 86,
+     "n_groups": 86,
+     "c1": 86,
+     "c2": 0,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": true
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 257,
+    "n_groups": 257,
+    "c1": 249,
+    "c2": 8,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": true,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "ABSTAIN",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": true
+   },
+   "majority_vote_matched": {
+    "verdict": "ABSTAIN",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": true
+   },
+   "llm_judge": {
+    "verdict": "ABSTAIN",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": true,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "ABSTAIN",
+    "certified": null,
+    "calls": 258,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": true
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": true
+   }
+  },
+  {
+   "query": "The Germanwings flight disappeared from the radar at 9.39 UTC",
+   "gold": "ABSTAIN",
+   "n_items": 271,
+   "undefended": {
+    "verdict": "ABSTAIN",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": true
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 271,
+     "n_groups": 271,
+     "c1": 269,
+     "c2": 2,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": true
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 91,
+     "n_groups": 91,
+     "c1": 89,
+     "c2": 2,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": true
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 271,
+    "n_groups": 271,
+    "c1": 269,
+    "c2": 2,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": true,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "ABSTAIN",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": true
+   },
+   "majority_vote_matched": {
+    "verdict": "ABSTAIN",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": true
+   },
+   "llm_judge": {
+    "verdict": "ABSTAIN",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": true,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "ABSTAIN",
+    "certified": null,
+    "calls": 272,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": true
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": true
+   }
+  },
+  {
+   "query": "There were 148 people onboard the Germanwings plane",
+   "gold": "FALSE",
+   "n_items": 271,
+   "undefended": {
+    "verdict": "FALSE",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": true
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 271,
+     "n_groups": 271,
+     "c1": 250,
+     "c2": 17,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": false
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 91,
+     "n_groups": 91,
+     "c1": 75,
+     "c2": 13,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": false
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 271,
+    "n_groups": 271,
+    "c1": 250,
+    "c2": 17,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": false,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "FALSE",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": true
+   },
+   "majority_vote_matched": {
+    "verdict": "FALSE",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": true
+   },
+   "llm_judge": {
+    "verdict": "FALSE",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": true,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "FALSE",
+    "certified": null,
+    "calls": 272,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": true
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": false
+   }
+  },
+  {
+   "query": "The Germanwings plane that reportedly crashed was flying from Barcelona to Dusseldorf (flight 4U9525)",
+   "gold": "ABSTAIN",
+   "n_items": 272,
+   "undefended": {
+    "verdict": "TRUE",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": false
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 272,
+     "n_groups": 272,
+     "c1": 259,
+     "c2": 10,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": true
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 91,
+     "n_groups": 91,
+     "c1": 82,
+     "c2": 9,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": true
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 272,
+    "n_groups": 272,
+    "c1": 259,
+    "c2": 10,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": true,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "TRUE",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": false
+   },
+   "majority_vote_matched": {
+    "verdict": "TRUE",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": false
+   },
+   "llm_judge": {
+    "verdict": "TRUE",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": false,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "TRUE",
+    "certified": null,
+    "calls": 273,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": false
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": true
+   }
+  },
+  {
+   "query": "There were 142 passengers onboard the Germanwings flight",
+   "gold": "FALSE",
+   "n_items": 271,
+   "undefended": {
+    "verdict": "FALSE",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": true
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 271,
+     "n_groups": 271,
+     "c1": 252,
+     "c2": 16,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": false
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 91,
+     "n_groups": 91,
+     "c1": 77,
+     "c2": 11,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": false
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 271,
+    "n_groups": 271,
+    "c1": 252,
+    "c2": 16,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": false,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "FALSE",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": true
+   },
+   "majority_vote_matched": {
+    "verdict": "FALSE",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": true
+   },
+   "llm_judge": {
+    "verdict": "FALSE",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": true,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "FALSE",
+    "certified": null,
+    "calls": 272,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": true
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": false
+   }
+  },
+  {
+   "query": "Journalists have been told not to leave Moscow as a major announcement from the Kremlin is pending",
+   "gold": "ABSTAIN",
+   "n_items": 25,
+   "undefended": {
+    "verdict": "ABSTAIN",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": true
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 25,
+     "n_groups": 25,
+     "c1": 24,
+     "c2": 1,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": true
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 9,
+     "n_groups": 9,
+     "c1": 9,
+     "c2": 0,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": true
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 25,
+    "n_groups": 25,
+    "c1": 24,
+    "c2": 1,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": true,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "ABSTAIN",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": true
+   },
+   "majority_vote_matched": {
+    "verdict": "ABSTAIN",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": true
+   },
+   "llm_judge": {
+    "verdict": "ABSTAIN",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": true,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "ABSTAIN",
+    "certified": null,
+    "calls": 26,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": true
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": true
+   }
+  },
+  {
+   "query": "The Lindt cafe was targeted because it was not halal-certified",
+   "gold": "ABSTAIN",
+   "n_items": 73,
+   "undefended": {
+    "verdict": "ABSTAIN",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": true
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 73,
+     "n_groups": 73,
+     "c1": 73,
+     "c2": 0,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": true
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 25,
+     "n_groups": 25,
+     "c1": 25,
+     "c2": 0,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": true
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 73,
+    "n_groups": 73,
+    "c1": 73,
+    "c2": 0,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": true,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "ABSTAIN",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": true
+   },
+   "majority_vote_matched": {
+    "verdict": "ABSTAIN",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": true
+   },
+   "llm_judge": {
+    "verdict": "ABSTAIN",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": true,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "ABSTAIN",
+    "certified": null,
+    "calls": 74,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": true
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": true
+   }
+  },
+  {
+   "query": "An ISIS (IS) flag is being displayed (by hostages) at the cafe in Sydney's Martin Place",
+   "gold": "FALSE",
+   "n_items": 150,
+   "undefended": {
+    "verdict": "TRUE",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": false
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 150,
+     "n_groups": 150,
+     "c1": 132,
+     "c2": 16,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": false
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 50,
+     "n_groups": 50,
+     "c1": 36,
+     "c2": 14,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": false
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 150,
+    "n_groups": 150,
+    "c1": 132,
+    "c2": 16,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": false,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "TRUE",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": false
+   },
+   "majority_vote_matched": {
+    "verdict": "TRUE",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": false
+   },
+   "llm_judge": {
+    "verdict": "TRUE",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": false,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "TRUE",
+    "certified": null,
+    "calls": 151,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": false
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": false
+   }
+  },
+  {
+   "query": "40-50 hostages are being held at cafe in Sydney (according to Lindt CEO)",
+   "gold": "FALSE",
+   "n_items": 73,
+   "undefended": {
+    "verdict": "ABSTAIN",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": false
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 73,
+     "n_groups": 73,
+     "c1": 73,
+     "c2": 0,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": false
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 25,
+     "n_groups": 25,
+     "c1": 25,
+     "c2": 0,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": false
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 73,
+    "n_groups": 73,
+    "c1": 73,
+    "c2": 0,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": false,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "ABSTAIN",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": false
+   },
+   "majority_vote_matched": {
+    "verdict": "ABSTAIN",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": false
+   },
+   "llm_judge": {
+    "verdict": "ABSTAIN",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": false,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "ABSTAIN",
+    "certified": null,
+    "calls": 74,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": false
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": false
+   }
+  },
+  {
+   "query": "The flag being held up is a Shahadah flag with Islamic creed (script) commonly used by militants",
+   "gold": "ABSTAIN",
+   "n_items": 32,
+   "undefended": {
+    "verdict": "FALSE",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": false
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 32,
+     "n_groups": 32,
+     "c1": 24,
+     "c2": 6,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": true
+    },
+    "omega=3": {
+     "verdict": "FALSE",
+     "certified": true,
+     "calls": 11,
+     "n_groups": 11,
+     "c1": 6,
+     "c2": 4,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": false
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 32,
+    "n_groups": 32,
+    "c1": 24,
+    "c2": 6,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": true,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "FALSE",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": false
+   },
+   "majority_vote_matched": {
+    "verdict": "FALSE",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": false
+   },
+   "llm_judge": {
+    "verdict": "FALSE",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": false,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "FALSE",
+    "certified": null,
+    "calls": 33,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": false
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": true
+   }
+  },
+  {
+   "query": "(Alleged) ISIS militants are behind the hostage-taking in the Sydney cafe",
+   "gold": "FALSE",
+   "n_items": 51,
+   "undefended": {
+    "verdict": "FALSE",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": true
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 51,
+     "n_groups": 51,
+     "c1": 36,
+     "c2": 9,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": false
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 17,
+     "n_groups": 17,
+     "c1": 11,
+     "c2": 3,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": false
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 51,
+    "n_groups": 51,
+    "c1": 36,
+    "c2": 9,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": false,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "FALSE",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": true
+   },
+   "majority_vote_matched": {
+    "verdict": "FALSE",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": true
+   },
+   "llm_judge": {
+    "verdict": "FALSE",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": true,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "FALSE",
+    "certified": null,
+    "calls": 52,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": true
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": false
+   }
+  },
+  {
+   "query": "Hostages are being held by men waving an ISIS flag inside a cafe in Sydney's Martin Place",
+   "gold": "FALSE",
+   "n_items": 150,
+   "undefended": {
+    "verdict": "TRUE",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": false
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 150,
+     "n_groups": 150,
+     "c1": 135,
+     "c2": 15,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": false
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 50,
+     "n_groups": 50,
+     "c1": 42,
+     "c2": 8,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": false
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 150,
+    "n_groups": 150,
+    "c1": 135,
+    "c2": 15,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": false,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "TRUE",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": false
+   },
+   "majority_vote_matched": {
+    "verdict": "TRUE",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": false
+   },
+   "llm_judge": {
+    "verdict": "TRUE",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": false,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "TRUE",
+    "certified": null,
+    "calls": 151,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": false
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": false
+   }
+  },
+  {
+   "query": "The Lindt cafe hostage-taking may be a diversion for something else (another bigger terrorist event)",
+   "gold": "FALSE",
+   "n_items": 73,
+   "undefended": {
+    "verdict": "ABSTAIN",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": false
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 73,
+     "n_groups": 73,
+     "c1": 73,
+     "c2": 0,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": false
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 25,
+     "n_groups": 25,
+     "c1": 25,
+     "c2": 0,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": false
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 73,
+    "n_groups": 73,
+    "c1": 73,
+    "c2": 0,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": false,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "ABSTAIN",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": false
+   },
+   "majority_vote_matched": {
+    "verdict": "ABSTAIN",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": false
+   },
+   "llm_judge": {
+    "verdict": "ABSTAIN",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": false,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "ABSTAIN",
+    "certified": null,
+    "calls": 74,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": false
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": false
+   }
+  },
+  {
+   "query": "The Sydney Opera House has been evacuated",
+   "gold": "ABSTAIN",
+   "n_items": 25,
+   "undefended": {
+    "verdict": "TRUE",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": false
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 25,
+     "n_groups": 25,
+     "c1": 20,
+     "c2": 4,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": true
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 9,
+     "n_groups": 9,
+     "c1": 5,
+     "c2": 3,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": true
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 25,
+    "n_groups": 25,
+    "c1": 20,
+    "c2": 4,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": true,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "TRUE",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": false
+   },
+   "majority_vote_matched": {
+    "verdict": "TRUE",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": false
+   },
+   "llm_judge": {
+    "verdict": "TRUE",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": false,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "TRUE",
+    "certified": null,
+    "calls": 26,
+    "pivotal_fraction": 0.0,
+    "method": "influence_detector",
+    "correct": false
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": true
+   }
+  },
+  {
+   "query": "There has been an incident at Sydney Opera House",
+   "gold": "FALSE",
+   "n_items": 25,
+   "undefended": {
+    "verdict": "TRUE",
+    "calls": 1,
+    "certified": null,
+    "method": "undefended",
+    "correct": false
+   },
+   "feed_partition_own_budget": {
+    "omega=1": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 25,
+     "n_groups": 25,
+     "c1": 18,
+     "c2": 4,
+     "threshold": 1,
+     "method": "feed_partition(omega=1)",
+     "correct": false
+    },
+    "omega=3": {
+     "verdict": "ABSTAIN",
+     "certified": true,
+     "calls": 9,
+     "n_groups": 9,
+     "c1": 5,
+     "c2": 2,
+     "threshold": 1,
+     "method": "feed_partition(omega=3)",
+     "correct": false
+    }
+   },
+   "feed_partition_matched": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 25,
+    "n_groups": 25,
+    "c1": 18,
+    "c2": 4,
+    "threshold": 1,
+    "method": "feed_partition(omega=1)",
+    "correct": false,
+    "omega_matched": 1
+   },
+   "majority_vote_own_budget": {
+    "verdict": "TRUE",
+    "calls": 5,
+    "certified": null,
+    "method": "majority_vote(K=5)",
+    "correct": false
+   },
+   "majority_vote_matched": {
+    "verdict": "TRUE",
+    "calls": 300,
+    "certified": null,
+    "method": "majority_vote(K=300)",
+    "correct": false
+   },
+   "llm_judge": {
+    "verdict": "TRUE",
+    "calls": 6,
+    "certified": null,
+    "method": "llm_judge(K=5)",
+    "correct": false,
+    "judge_is_agent": true
+   },
+   "influence_detector": {
+    "verdict": "TRUE",
+    "certified": null,
+    "calls": 26,
+    "pivotal_fraction": 0.16,
+    "method": "influence_detector",
+    "correct": false
+   },
+   "query_decomposition": {
+    "verdict": null,
+    "certified": false,
+    "calls": 0,
+    "method": "query_decomposition(no decomposition available)",
+    "applies": false,
+    "correct": null
+   },
+   "arq": {
+    "verdict": "ABSTAIN",
+    "certified": true,
+    "calls": 300,
+    "correct": false
+   }
+  }
+ ],
+ "_written": "2026-10-02T16:29:01"
+}

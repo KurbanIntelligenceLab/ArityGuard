@@ -1,0 +1,86 @@
+{
+ "experiment": "E2",
+ "agent": "Qwen/Qwen2.5-14B-Instruct",
+ "seed": 3,
+ "datasets": {
+  "hotpotqa_synth_d0": {
+   "q_point": {
+    "1": 0.4271875,
+    "2": 0.825
+   },
+   "q_lower": {
+    "1": 0.41014542414886224,
+    "2": 0.8114472424005703
+   },
+   "q_upper": {
+    "1": 0.44440418904050405,
+    "2": 0.837773368256336
+   },
+   "trials": {
+    "1": 3200,
+    "2": 3200
+   },
+   "tau": 2,
+   "ground_truth_arity": 2,
+   "recovered": true,
+   "n_pools": 40,
+   "pool_size_min": 2
+  },
+  "2wiki_comparison_synth_d0": {
+   "q_point": {
+    "1": 0.28875,
+    "2": 0.8109375
+   },
+   "q_lower": {
+    "1": 0.2733087373806996,
+    "2": 0.7970008766513687
+   },
+   "q_upper": {
+    "1": 0.3046978656923114,
+    "2": 0.8241284575828831
+   },
+   "trials": {
+    "1": 3200,
+    "2": 3200
+   },
+   "tau": 2,
+   "ground_truth_arity": 2,
+   "recovered": true,
+   "n_pools": 40,
+   "pool_size_min": 2
+  },
+  "2wiki_bridge_comparison_synth_d0": {
+   "q_point": {
+    "1": 0.020625,
+    "2": 0.1046875,
+    "3": 0.181875,
+    "4": 0.3734375
+   },
+   "q_lower": {
+    "1": 0.016244908228398434,
+    "2": 0.09454970558786498,
+    "3": 0.1688937606805207,
+    "4": 0.35683868802672064
+   },
+   "q_upper": {
+    "1": 0.026154691052664655,
+    "2": 0.11577330164195564,
+    "3": 0.1956191415803152,
+    "4": 0.390339824169388
+   },
+   "trials": {
+    "1": 3200,
+    "2": 3200,
+    "3": 3200,
+    "4": 3200
+   },
+   "tau": null,
+   "ground_truth_arity": 4,
+   "recovered": false,
+   "n_pools": 40,
+   "pool_size_min": 4
+  }
+ },
+ "FALSIFICATION": "tau failed to recover the annotated ground-truth arity on ['2wiki_bridge_comparison_synth_d0']; tau is not a valid instrument for arity on these datasets, and every downstream use of tau is withdrawn until this is understood.",
+ "_written": "2026-10-07T15:24:49"
+}

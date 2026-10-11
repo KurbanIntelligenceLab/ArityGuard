@@ -1,0 +1,53 @@
+{
+ "experiment": "E5",
+ "agent": "Qwen/Qwen2.5-7B-Instruct",
+ "seed": 2,
+ "rows": [
+  {
+   "condition": "augmenting, rho_a = rho_t",
+   "adversary": "augment",
+   "rho_assumed": 0.0038,
+   "rho_true": 0.0038,
+   "n_pools": 16,
+   "certified": 16,
+   "violations": 0,
+   "violation_rate": 0.0,
+   "eta": 0.01
+  },
+  {
+   "condition": "augmenting, rho_a > rho_t",
+   "adversary": "augment",
+   "rho_assumed": 0.0038,
+   "rho_true": 0.0019,
+   "n_pools": 16,
+   "certified": 16,
+   "violations": 0,
+   "violation_rate": 0.0,
+   "eta": 0.01
+  },
+  {
+   "condition": "displacing, threshold Dbar",
+   "adversary": "augment",
+   "rho_assumed": 0.0038,
+   "rho_true": 0.0038,
+   "n_pools": 16,
+   "certified": 16,
+   "violations": 0,
+   "violation_rate": 0.0,
+   "eta": 0.01,
+   "FALSIFICATION": "no violations under a displacing adversary at threshold Dbar. Exhaustive search predicts violations here, so the displacing condition is probably not implemented; its negative result means nothing until this is fixed."
+  },
+  {
+   "condition": "displacing, threshold 2Dbar",
+   "adversary": "displace",
+   "rho_assumed": 0.0038,
+   "rho_true": 0.0038,
+   "n_pools": 16,
+   "certified": 16,
+   "violations": 0,
+   "violation_rate": 0.0,
+   "eta": 0.01
+  }
+ ],
+ "_written": "2026-10-07T19:03:48"
+}

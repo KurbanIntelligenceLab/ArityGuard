@@ -1,0 +1,62 @@
+{
+  "_comment": "Primary configuration. FIX THIS ON THE VALIDATION SPLIT BEFORE THE EVALUATION SPLIT IS TOUCHED (paper Sec. 6). Every sweep below is secondary and must be labelled as such in the write-up.",
+  "mechanism": {
+    "t": "tau",
+    "G": 200,
+    "eta": 0.01,
+    "adversary": "augment",
+    "randomize_order_within_group": true,
+    "abstention_counted_as_verdict": true
+  },
+  "calibration": {
+    "t_values": [1, 2, 3, 4, 5, 6, 7, 8],
+    "groups_per_t": 300,
+    "wilson_z": 1.96,
+    "tau_rule": "min t such that the Wilson LOWER bound of q(t) exceeds 0.5",
+    "no_evidence_control": true
+  },
+  "sweep": {
+    "rho_grid": [0.02, 0.05, 0.08, 0.11, 0.14, 0.18, 0.22, 0.30],
+    "rho_max": 0.30,
+    "G_max": 400,
+    "reuse": "draw once at rho_max, then reject to each rho (Sec. 6)"
+  },
+  "ablations": {
+    "t": [1, "tau", "tau+1"],
+    "G": [50, 200, 500],
+    "eta": [0.05, 0.01, 0.001],
+    "randomize_order": [true, false],
+    "abstention": ["counted", "discarded"],
+    "sampling": ["oracle", "retrieval-constrained"]
+  },
+  "statistics": {
+    "seeds": [0, 1, 2, 3, 4],
+    "seed_varies": ["group draws", "adversarial set at fixed rho", "query subsample"],
+    "bootstrap_resamples": 10000,
+    "confirmatory_family": [
+      "ARQ vs undefended",
+      "ARQ vs feed_partition at matched budget",
+      "ARQ vs query_decomposition"
+    ],
+    "correction": "Holm within the confirmatory family only; everything else is exploratory"
+  },
+  "splits": {
+    "calibration_fraction": 0.5,
+    "note": "calibration and evaluation halves MUST be disjoint; q and rho* are estimated on calibration only (E3)"
+  },
+  "agents": [
+    {"id": "Qwen2.5-7B-Instruct",        "kind": "local", "decoding": "greedy"},
+    {"id": "Qwen2.5-14B-Instruct",       "kind": "local", "decoding": "greedy"},
+    {"id": "<small API model>",          "kind": "api",   "decoding": "temperature=0"},
+    {"id": "<large API model>",          "kind": "api",   "decoding": "temperature=0"}
+  ],
+  "judge_agent": {"id": "<model not used as a victim>", "kind": "local"},
+  "datasets": {
+    "CoPHEME": "primary; the threat's native setting",
+    "HotpotQA": "ground-truth arity 2 for the E2 construct-validity check",
+    "2WikiMultihopQA": "chains of known length",
+    "RealtimeQA": "tau=1 regime, RobustRAG's benchmark",
+    "NaturalQuestions": "tau=1 regime",
+    "synthetic": "fabricated entities; parametric memory cannot help"
+  }
+}

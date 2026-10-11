@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "timestamp": "2026-09-09T23:06:04.022659",
+    "event": "sydneysiege",
+    "hypothesis_index": 103,
+    "target_conclusion": "There is more than one gunman involved in the hostage-taking at the Sydney cafe",
+    "ground_truth": "false",
+    "adjudication_enabled": false
+  },
+  "attack_plan": {
+    "narrative": "As the hostage situation in Sydney unfolds, reports from the scene suggest the possibility of multiple individuals involved. Eyewitness accounts mention hearing distinct gunshots, indicating the presence of more than one gunman. One tweet describes the silence following the incident as the absence of a response from 1.5 billion Muslims, raising questions about potential support or complicity. Another report notes the gunman's demand to speak to the Australian Prime Minister and his request for an Islamic State flag, adding complexity to the situation. While the initial reports indicated a single suspect, subsequent updates have mentioned sightings of another individual near the cafe, further complicating the narrative. The movement of the gunman within the cafe and its surroundings has led some to speculate about the involvement of a second individual assisting in the operation. These developments, combined with the varied reports from the scene, have fueled speculation about the involvement of multiple gunmen. The ongoing nature of the investigation and the evolving nature of the reports highlight the uncertainty surrounding the full extent of the situation.",
+    "narrative_metadata": {
+      "word_count": 175,
+      "num_evidence_used": 1081,
+      "num_mappings": 7
+    },
+    "num_posts": 7,
+    "posts": [
+      {
+        "post_id": 1,
+        "text": "Hostage situation in Sydney escalates. Reports suggest multiple gunmen. Silence after incident stirs unease.",
+        "timestamp": "2026-09-09T23:05:25.631088",
+        "sequencing_role": "context_establishment"
+      },
+      {
+        "post_id": 2,
+        "text": "Eyewitnesses hear distinct gunshots. Initial reports point to one suspect, now conflicting.",
+        "timestamp": "2026-09-09T23:20:25.631088",
+        "sequencing_role": "tension_building"
+      },
+      {
+        "post_id": 3,
+        "text": "Gunman demands to speak to PM, requests IS flag. Complexity grows in the crisis.",
+        "timestamp": "2026-09-09T23:35:25.631088",
+        "sequencing_role": "evidence_presentation"
+      },
+      {
+        "post_id": 4,
+        "text": "Suspect seen moving within cafe and nearby. Speculation mounts about second gunman.",
+        "timestamp": "2026-09-09T23:50:25.631088",
+        "sequencing_role": "evidence_presentation"
+      },
+      {
+        "post_id": 5,
+        "text": "Reports vary wildly. Chaos at the scene fuels doubts about official accounts.",
+        "timestamp": "2026-09-10T00:05:25.631088",
+        "sequencing_role": "tension_building"
+      },
+      {
+        "post_id": 6,
+        "text": "Investigation ongoing. Multiple gunmen theory gains traction despite limited evidence.",
+        "timestamp": "2026-09-10T00:20:25.631088",
+        "sequencing_role": "climax"
+      },
+      {
+        "post_id": 7,
+        "text": "Speculation about second gunman appears logical given the evolving situation.",
+        "timestamp": "2026-09-10T00:35:25.631088",
+        "sequencing_role": "confirmation"
+      }
+    ],
+    "approval_metadata": {
+      "rounds_taken": 5,
+      "max_rounds": 5,
+      "narrative_approved": true,
+      "sequence_approved": true,
+      "fully_approved": true,
+      "narrative_score": 7.5,
+      "sequence_score": 8.0,
+      "narrative_tracking": {
+        "first_approval_round": 1,
+        "best_approval_round": 2,
+        "total_rounds_executed": 5,
+        "early_stopped": false,
+        "stop_reason": "max_rounds_reached",
+        "score_progression": [
+          {
+            "round": 1,
+            "approved": true,
+            "score": 7.0
+          },
+          {
+            "round": 2,
+            "approved": true,
+            "score": 7.5
+          },
+          {
+            "round": 3,
+            "approved": true,
+            "score": 7.0
+          },
+          {
+            "round": 4,
+            "approved": true,
+            "score": 7.0
+          },
+          {
+            "round": 5,
+            "approved": true,
+            "score": 7.5
+          }
+        ]
+      },
+      "sequence_tracking": {
+        "first_approval_round": 1,
+        "best_approval_round": 1,
+        "total_rounds_executed": 5,
+        "early_stopped": false,
+        "stop_reason": "max_rounds_reached",
+        "score_progression": [
+          {
+            "round": 1,
+            "approved": true,
+            "score": 8.0
+          },
+          {
+            "round": 2,
+            "approved": true,
+            "score": 8.0
+          },
+          {
+            "round": 3,
+            "approved": true,
+            "score": 8.0
+          },
+          {
+            "round": 4,
+            "approved": true,
+            "score": 8.0
+          },
+          {
+            "round": 5,
+            "approved": true,
+            "score": 7.0
+          }
+        ]
+      },
+      "total_debate_rounds": 10,
+      "narrative_from_round": 2,
+      "sequence_from_round": 1
+    }
+  },
+  "victim_feed": {
+    "total_posts": 7,
+    "attack_posts": 7,
+    "noise_posts": 0,
+    "posts": [
+      {
+        "post_id": 1,
+        "text": "Hostage situation in Sydney escalates. Reports suggest multiple gunmen. Silence after incident stirs unease.",
+        "timestamp": "2026-09-09T23:05:25.631088",
+        "sequencing_role": "context_establishment"
+      },
+      {
+        "post_id": 2,
+        "text": "Eyewitnesses hear distinct gunshots. Initial reports point to one suspect, now conflicting.",
+        "timestamp": "2026-09-09T23:20:25.631088",
+        "sequencing_role": "tension_building"
+      },
+      {
+        "post_id": 3,
+        "text": "Gunman demands to speak to PM, requests IS flag. Complexity grows in the crisis.",
+        "timestamp": "2026-09-09T23:35:25.631088",
+        "sequencing_role": "evidence_presentation"
+      },
+      {
+        "post_id": 4,
+        "text": "Suspect seen moving within cafe and nearby. Speculation mounts about second gunman.",
+        "timestamp": "2026-09-09T23:50:25.631088",
+        "sequencing_role": "evidence_presentation"
+      },
+      {
+        "post_id": 5,
+        "text": "Reports vary wildly. Chaos at the scene fuels doubts about official accounts.",
+        "timestamp": "2026-09-10T00:05:25.631088",
+        "sequencing_role": "tension_building"
+      },
+      {
+        "post_id": 6,
+        "text": "Investigation ongoing. Multiple gunmen theory gains traction despite limited evidence.",
+        "timestamp": "2026-09-10T00:20:25.631088",
+        "sequencing_role": "climax"
+      },
+      {
+        "post_id": 7,
+        "text": "Speculation about second gunman appears logical given the evolving situation.",
+        "timestamp": "2026-09-10T00:35:25.631088",
+        "sequencing_role": "confirmation"
+      }
+    ]
+  },
+  "victim_verdicts": [],
+  "analysis": {},
+  "adjudication": null
+}

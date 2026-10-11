@@ -1,0 +1,86 @@
+{
+ "experiment": "E2",
+ "agent": "mistralai/Mistral-7B-Instruct-v0.3",
+ "seed": 4,
+ "datasets": {
+  "hotpotqa_synth_d0": {
+   "q_point": {
+    "1": 0.215,
+    "2": 0.40125
+   },
+   "q_lower": {
+    "1": 0.2011118966394165,
+    "2": 0.38439529794944466
+   },
+   "q_upper": {
+    "1": 0.22957156786145022,
+    "2": 0.4183415165048031
+   },
+   "trials": {
+    "1": 3200,
+    "2": 3200
+   },
+   "tau": null,
+   "ground_truth_arity": 2,
+   "recovered": false,
+   "n_pools": 40,
+   "pool_size_min": 2
+  },
+  "2wiki_comparison_synth_d0": {
+   "q_point": {
+    "1": 0.241875,
+    "2": 0.2075
+   },
+   "q_lower": {
+    "1": 0.22735314533148207,
+    "2": 0.193804337133312
+   },
+   "q_upper": {
+    "1": 0.2570158696660135,
+    "2": 0.22189711327547226
+   },
+   "trials": {
+    "1": 3200,
+    "2": 3200
+   },
+   "tau": null,
+   "ground_truth_arity": 2,
+   "recovered": false,
+   "n_pools": 40,
+   "pool_size_min": 2
+  },
+  "2wiki_bridge_comparison_synth_d0": {
+   "q_point": {
+    "1": 0.0059375,
+    "2": 0.0771875,
+    "3": 0.1228125,
+    "4": 0.201875
+   },
+   "q_lower": {
+    "1": 0.0038044565822177305,
+    "2": 0.06843890561642886,
+    "3": 0.11189028834271127,
+    "4": 0.1883284346478955
+   },
+   "q_upper": {
+    "1": 0.009255365101850547,
+    "2": 0.08695004994242275,
+    "3": 0.1346392529429753,
+    "4": 0.21613650519182692
+   },
+   "trials": {
+    "1": 3200,
+    "2": 3200,
+    "3": 3200,
+    "4": 3200
+   },
+   "tau": null,
+   "ground_truth_arity": 4,
+   "recovered": false,
+   "n_pools": 40,
+   "pool_size_min": 4
+  }
+ },
+ "FALSIFICATION": "tau failed to recover the annotated ground-truth arity on ['hotpotqa_synth_d0', '2wiki_comparison_synth_d0', '2wiki_bridge_comparison_synth_d0']; tau is not a valid instrument for arity on these datasets, and every downstream use of tau is withdrawn until this is understood.",
+ "_written": "2026-10-09T01:37:31"
+}

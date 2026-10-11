@@ -1,0 +1,30 @@
+# Conda environment for ArityGuard (`arq_aamas27` on the machine the paper was
+# run on). Versions are the ones installed there on 9 Oct 2026; the full pip
+# freeze is env/pip-freeze-arq_aamas27.txt.
+#   conda env create -f environment.yml && conda activate arq_aamas27
+name: arq_aamas27
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - zip                       # make dist
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - torch==2.3.1+cu121      # CPU-only machines: torch==2.3.1 is enough for verify/smoke/tables
+      - transformers==4.44.2
+      - accelerate==0.33.0
+      - tokenizers==0.19.1
+      - safetensors==0.8.0
+      - sentencepiece==0.2.2    # Mistral tokenizer
+      - protobuf==7.36.2        # Mistral tokenizer
+      - huggingface_hub==0.36.2
+      - datasets==5.0.1         # scripts/download/fetch_qa_datasets.py
+      - pyarrow==25.0.1
+      - numpy==1.26.4
+      - scipy==1.11.4
+      - pandas==2.1.4
+      - requests==2.34.2
+      - tqdm==4.70.0
+      - PyYAML==6.0.3           # montage-plan generation only
+      - matplotlib==3.10.9      # make figures (on the original machine figures ran under /usr/bin/python3)
